@@ -14,7 +14,7 @@ const Footer = () => {
             {" "}
             Soham{" "}
           </a>
-          ,
+          &
           <a
             className="white-text"
             target="_blank"
@@ -25,7 +25,7 @@ const Footer = () => {
             Srinjoy{" "}
           </a>
           <br />
-          &copy; All rights reserved
+          
         </div>
       </footer>
     </div>
