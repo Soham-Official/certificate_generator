@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/pgs0dlo.css");
+
 body{
   background-color:#000814 ;
   height: 100vh;
@@ -9,6 +11,9 @@ body{
   font-size: 8vh;
   font-weight: bold;
   text-align: center;
+  font-family: sniglet, sans-serif;
+  font-weight: 800;
+  font-style: normal;
 }
 .header{
   display: flex;
@@ -85,7 +90,7 @@ input:focus {
   display: block;
   text-align: center;
   cursor: pointer;
-  
+  border-radius: 1vh;
   outline: none;
   overflow: hidden;
   position: relative;
