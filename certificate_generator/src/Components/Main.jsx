@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import download from "downloadjs";
+import undraw from "../undraw.svg";
+import logo from "../logo.png";
 const Main = () => {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const Validate = () => {
+  const Validate = (e) => {
+    e.preventDefault();
     fetch("http://localhost:5000/get_certificate", {
       method: "post",
       headers: {
@@ -26,17 +29,35 @@ const Main = () => {
   };
   return (
     <>
-      <input
-        type="text"
-        placeholder="Enter Username"
+    <div className="header">
+    <div className="logo"> <img src={logo} alt="" /> 
+    </div>
+    <div className="heading">
+    CODECHEF NSEC CHAPTER
+    </div>
+    </div>
+    <div className="pic">
+      <img src={undraw} alt="" />
+    </div>
+    <div className="login">
+	<h4>Provide the following details to get your certificate</h4>
+    <form>
+    	<input type="text"
         value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      {name ? (
-        <button onClick={Validate}>Button</button>
+        onChange={(e) => setName(e.target.value)} placeholder="codechef id" required="required" />
+        <input type="text" name="p" placeholder="Contest Code" required="required" />
+        {name ? (
+        <button className="btn" type="submit" onClick={Validate}><span>Get my Certificate</span></button>
       ) : (
-        <button disabled>Button</button>
+        <button className="btn" disabled><span>Get my Certificate</span></button>
       )}
+        </form>
+       
+</div>
+      
+	
+
+      
     </>
   );
 };

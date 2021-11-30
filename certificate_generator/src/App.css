@@ -1,38 +1,143 @@
-.App {
+body{
+  background-color:#000814 ;
+  height: 100vh;
+}
+/* -----------------------heading---------------------- */
+.heading{
+  color:white;
+  text-align: center;
+  font-size: 8vh;
+  font-weight: bold;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.logo img{
+  width:20vh;
+  height: 20vh;
+  margin-top: 2vh;
+  margin-left: 2vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ---------------------------------undraw----------------------------------------------- */
+.pic{
+  margin-top: 25vh;
+  margin-left: 10vh;
+}
+.pic img{
+  height: 40vh;
+  width: 60vh;
+}
+/* --------------------------------------------login------------------------------------- */
+
+.login { 
+	position: absolute;
+	top: 30%;
+	left: 60%;
+	width: 30%;
+	
+}
+
+
+
+.login h4 { 
+  color: rgb(190, 190, 190); 
+  text-shadow: 0 0 1.5vh rgba(0,0,0,0.3); 
+  letter-spacing:0.125vw; 
+  margin-left: 1.5vw;
+  font-size: 2vh;
+}
+
+input { 
+	width: 80%; 
+	margin-bottom: 1.5vh; 
+  margin-left: 1.5vw;
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 1vh;
+	font-size: 1vw;
+	color: #fff;
+	
+	border: .125vw solid rgba(0,0,0,0.3);
+	border-radius: 0.5vw;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+input:focus { 
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); 
+}
+
+
+
+/* -------------------------------------------Button----------------------------------------------- */
+.btn {
+  border: 1px solid white;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.2vh;
+  background-color: #222;
+  padding: 1.5vh 1.5vh;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+.btn span {
+  position: relative; 
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #008496;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+/* ---------------------------------media-------------------- */
+@media only screen and (max-width: 800px) {
+  .login{
+    
+    top: 40% !important;
+    left: 10% !important;
+    width: 80% !important;
   }
-  to {
-    transform: rotate(360deg);
+  .pic{
+    display: none;
   }
+  .heading{
+    font-size: 4vh;
+  }
+  .logo{
+    left:50% !important;
+  }
+
 }
