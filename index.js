@@ -60,14 +60,14 @@ app.post("/get_certificate", (req, res) => {
           size: "A4",
         });
         doc.pipe(fs.createWriteStream(`${name}.pdf`));
-        doc.image("certificate_november.jpeg", 0, 0, { width: 850 });
+        doc.image("certificate_november.png", 0, 0, { width: 850 });
         doc.font("fonts/RockoUltraFLF.ttf");
         if (name.length > 14) {
-          doc.fontSize(30).fillColor("white").text(name, 300, 220, {
+          doc.fontSize(30).fillColor("white").text(name, 300, 240, {
             align: "center",
           });
         } else {
-          doc.fontSize(50).fillColor("white").text(name, 300, 220, {
+          doc.fontSize(50).fillColor("white").text(name, 300, 240, {
             align: "center",
           });
         }
