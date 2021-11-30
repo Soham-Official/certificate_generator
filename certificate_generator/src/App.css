@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* justify-content: center; */
 }
 
 .logo img {
@@ -94,6 +95,7 @@ input:focus {
   padding: 1.5vh 1.5vh;
   margin: 0 auto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .btn span {
@@ -123,20 +125,23 @@ input:focus {
 /* -------------------------------------Footer------------------------------- */
 
 footer {
-  position: absolute;
-  font-size: 2vh;
+  /* position: absolute; */
+  font-size: 1.6vh;
   bottom: 0;
   width: 100vw;
   height: 4vh;
-  background-color: #001275;
+  /* background-color: #001275; */
+  background-color: #120e43;
   color: rgb(107, 104, 104);
   text-align: center !important;
   line-height: 1.5;
   position: fixed;
   z-index: 99999;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-left: 42%;
+  color: #af9d5a;
+  /* padding-left: 42%; */
 }
 footer a {
   text-decoration: none;
@@ -146,9 +151,6 @@ footer a {
 footer a:hover {
   color: #0faa01;
 }
-
-
-
 
 /* ---------------------------------media-------------------- */
 @media only screen and (max-width: 1024px) {
@@ -174,7 +176,11 @@ footer a:hover {
     margin-left: -25px;
     font-size: 6vw;
   }
-  footer{
-    padding-left: 25%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .login {
+    top: 40% !important;
+    left: 15% !important;
+    width: 80% !important;
   }
 }

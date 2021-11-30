@@ -24,7 +24,10 @@ const Main = () => {
       .then((res) => res.json())
       .then((res) => {
         setName("");
-        if (res.err) return setError(res.err);
+        if (res.err) {
+          setLoading(false);
+          return setError(res.err);
+        }
         setTimeout(() => {
           window.location.href = `http://localhost:5000/download/${res.token}`;
           setLoading(false);
