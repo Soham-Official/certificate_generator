@@ -40,6 +40,15 @@ app.post("/get_certificate", (req, res) => {
       })
       .then(function (record) {
         name = record.FullName;
+        
+        name=name.trim();
+        name=name.toLowerCase();
+        name= name.split(" ");
+
+        for (let i = 0; i < name.length; i++) {
+          name[i] = name[i][0].toUpperCase() + name[i].substr(1);
+        }
+        name.join(" ");
         console.log(name);
         const doc = new PDFDocument({
           layout: "landscape",
@@ -47,10 +56,17 @@ app.post("/get_certificate", (req, res) => {
         });
         doc.pipe(fs.createWriteStream(`${name}.pdf`));
         doc.image("certificate_november.jpeg", 0, 0, { width: 850 });
-        doc.font("fonts/Comforter-Regular.ttf");
+        doc.font("fonts/RockoUltraFLF.ttf");
+        if(name.length>14){
+          doc.fontSize(30).fillColor("white").text(name, 300, 220, {
+            align: "center",
+          });
+        }
+        else{
         doc.fontSize(50).fillColor("white").text(name, 300, 220, {
           align: "center",
         });
+      }
         doc.end();
         return res.json({
           name,
